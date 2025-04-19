@@ -21,7 +21,7 @@ const Contact = () => {
         else if(email.current.value != "" && text.current.value != ""){
             setError(" Thank-You our team will reach out to you shortly!...")
            setnewClass("alert alert-success")
-           axios.post("https:/-server.onrender.com/confirmation-mail",{emailEle,message})
+           axios.post("https://jetway-server.onrender.com/confirmation-mail",{emailEle,message})
            email.current.value = ""
            text.current.value =""
         }

@@ -43,7 +43,7 @@ const SignUp = () => {
         try {
            
            if(signUpError){
-            await axios.post("https:/-server.onrender.com/createuser",{name,email,password}).
+            await axios.post("https://jetway-server.onrender.com/createuser",{name,email,password}).
             then((result) => console.log(result)).
             catch((err)=>console.log(err))
             console.log("submitted");

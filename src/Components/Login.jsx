@@ -27,7 +27,7 @@ const Login = () => {
         setpassError("")
         try {
       
-          const response = await axios.post("https:/-server.onrender.com/verify",{email,password})
+          const response = await axios.post("https://jetway-server.onrender.com/verify",{email,password})
           // when data matched
           
           if(response.data.message === "success"){

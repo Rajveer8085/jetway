@@ -15,7 +15,7 @@ const User = () => {
   useEffect(() => {
     const userFetcher = async () => {
       try {
-        const response = await axios.post("https:/-server.onrender.com/userInfo", { userId })
+        const response = await axios.post("https://jetway-server.onrender.com/userInfo", { userId })
         setuserInfo(response.data.data)
         if (userInfo == null) {
           console.log("this condition is oky");
@@ -41,7 +41,7 @@ const User = () => {
     const ticketFetch = async () => {
       try {
         console.log(userId);
-        const response = await axios.post("https:/-server.onrender.com/fetchtickets", { userId })
+        const response = await axios.post("https://jetway-server.onrender.com/fetchtickets", { userId })
         console.log(response.data, "this is response data");
         setTicketInfo(response.data.data)
       } catch (error) {
@@ -71,7 +71,7 @@ const User = () => {
       const Filterticket = ticketInfo.filter((el) => (el._id != id))
       console.log(Filterticket);
       setTicketInfo(Filterticket)
-      const response = await axios.post("https:/-server.onrender.com/cancelticket", { id })
+      const response = await axios.post("https://jetway-server.onrender.com/cancelticket", { id })
 
     } catch (error) {
       console.log(error);

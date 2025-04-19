@@ -26,7 +26,7 @@ const Login = () => {
         setemailError("")
         setpassError("")
         setotpfield(true)
-     const response =  await axios.post("https:/-server.onrender.com/forgotPass",{email})
+     const response =  await axios.post("https://jetway-server.onrender.com/forgotPass",{email})
           // thenn password not match then show error
          if(response.data.message === "Email sent successfully"){
           setisDisabled(true)
