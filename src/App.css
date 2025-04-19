@@ -1,0 +1,590 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Agu+Display&family=Oswald:wght@200..700&family=Playwrite+CO+Guides&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  background-color: white;
+  cursor: url("./assets/imgs/41822.jpg") 16 16, auto;
+  
+  font-family: "Playfair Display", serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+.RJVR {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* body  */
+
+header{
+    position: sticky;
+    z-index: 2;
+    top: 0;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: cornflowerblue;
+  color: snow;
+  padding: 0px 100px;
+  
+}
+.navActive {
+   position: relative;
+}
+.navActive::before{
+   content: "";
+  position: absolute;
+  background-color: white;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+}
+nav img {
+  object-fit: contain;
+  cursor: pointer;
+  height: 85px;
+  width: 100px;
+}
+.Nav_ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+.Nav_ul li {
+  font-size: 20px;
+  margin: 10px 20px;
+}
+.nav-link {
+  position: relative;
+  cursor: pointer;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+}
+.nav-link:hover.nav-link::before {
+  transition: 0.5s ease-in-out;
+  width: 100%;
+}
+.nav_Login button {
+  background: transparent;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 4px;
+  color: aliceblue;
+  font-size: 16px;
+}
+.nav_Login button:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  transform: translateY(3px);
+  background-color: rgba(54, 107, 207, 0.61);
+}
+.toggle {
+  font-size: 25px;
+  margin-bottom: 15px;
+  display: none;
+}
+
+.highlight{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.highlight img {
+  height: 200px;
+}
+.highlight h5 {
+  font-weight: 700;
+}
+.highlight p {
+  font-size: 14px;
+}
+.highlight {
+  padding-top: 60px;
+}
+.prop {
+  margin-top: 60px;
+  box-shadow: 2px 2px 4px gray, -2px -2px 4px gray;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+/* offers */
+
+.Offers {
+  padding-top: 60px;
+}
+.offer_imgs {
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+}
+.offer_imgs:hover {
+  border-radius: 10px;
+  transition: 0.5s linear;
+  box-shadow: 2px 2px 2px gray, -2px -2px 2px gray;
+  transform: scale(1.1);
+}
+.offer_card {
+  margin: 35px 15px;
+}
+
+/* popular airlines */
+.popularairlines {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 105px;
+  color: white;
+  background-color: cornflowerblue;
+  background: linear-gradient(to right, cornflowerblue, purple);
+  filter: drop-shadow(2px 2px 4px black);
+  text-align: center;
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+/* footer */
+footer {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+/* Avisales api
+59c4041c04e569e1819e584602d5de23 */
+
+/* ameadus api 
+ImJLAoNu09I5EVcD2WQTNAQJ9lkV9C6I
+
+secret
+N4tIX1dSfL27utdg*/
+
+.Booking {
+  background: url(./assets/imgs/booking-back2.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+.flightSerach {
+  font-size: 82px;
+}
+.Booking_Handler {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px gray, -2px -2px 4px gray;
+  padding: 50px 34px;
+  margin: 50px 10px;
+}
+.inputs {
+  display: flex;
+  justify-content: space-evenly;
+}
+.inputs input {
+  border: none;
+  padding: 8px 15px;
+  margin: 0px 8px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.inputs button {
+  color: white;
+  /* padding: 0px 15px; */
+  font-size: 22px;
+  padding: 0px 8px;
+  text-align: center;
+  border: none;
+}
+.Data {
+  text-align: center;
+}
+
+.flights {
+  background-color: aliceblue;
+  margin: 10px;
+  padding: 15px 15px;
+  border-radius: 20px;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-evenly;
+}
+.flights:hover {
+  transition: 0.5s linear;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 4px gray, -2px -2px 4px gray;
+  transform: translateY(-2px);
+}
+
+/* flighsinfo */
+
+.infoContainer {
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  background-image: url(./assets/imgs/backgrund2.avif);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.FlightsInfo {
+  margin-inline: 10% !important;
+  width: 85%;
+  box-shadow: 2px 2px 4px gray, -2px -2px 4px gray;
+  margin: 40px;
+  padding: 25px 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.FlightsInfo button {
+  margin-top: 25px;
+  background-color: orangered;
+  color: snow;
+  padding: 8px 35px;
+  border: none;
+  border-radius: 12px;
+}
+.normalInfo {
+  display: flex;
+  justify-content: space-evenly;
+}
+.AdvanceInfo {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* booking form */
+.booking-form {
+  background-image: url(./assets/imgs/backgrund2.avif);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+.book-tickets {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 25px;
+  border-radius: 20px;
+  width: 70%;
+}
+.book-tickets input {
+  /* width: 60%; */
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+/* login form */
+.LoginForm {
+  background: url(./assets/imgs/backgrund.avif);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 80vh; */
+  padding: 40px;
+  min-height: 90vh;
+}
+
+.LoginForm form {
+  width: 35%;
+  min-height: 60vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 55px;
+  border-radius: 25px;
+}
+
+/* user profile */
+
+
+.booked_ticket{
+  background-color: transparent;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.267) ,-2px -2px 2px rgba(0, 0, 0, 0.265);
+  padding: 10px 15px;
+  border-radius: 12px;
+  margin: 20px 0;
+  
+}
+.profile {
+  display: flex;
+  justify-content: center;
+}
+.user {
+  width: 40%;
+  text-align: center;
+  background: snow;
+  color: cornflowerblue;
+  margin: 60px 20px;
+  min-height: 50vh;
+  border-radius: 12px;
+  box-shadow: 3px 3px 4px gray, -3px -3px 4px gray;
+}
+.userimg {
+  height: 80px;
+  font-size: 65px;
+  margin: 20px;
+  text-align: start;
+  margin-inline: 45px;
+}
+.userimg img {
+  height: 100px;
+  border-radius: 50px;
+}
+.additional_info {
+  margin-top: 40px;
+}
+
+.additional_info ul li {
+  font-size: 22px;
+  text-align: start;
+  display: flex;
+  justify-content: space-around;
+  background-color: cornflowerblue;
+  color: snow;
+  cursor: pointer;
+}
+.additional_info ul li span {
+  font-weight: 900;
+}
+
+.logoutbtn {
+  text-align: end;
+  margin: 25px;
+}
+
+.logoutbtn button {
+  background-color: orangered;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+.personal_info {
+  width: 65%;
+  margin-top: 40px;
+}
+.personal_info h4 {
+  display: flex;
+  align-items: center;
+  margin: 10px 35px;
+}
+/* user booked ticket modal deatials css */
+
+/* about page */
+.about {
+  padding-top: 60px;
+}
+.aboutContent {
+  text-align: center;
+}
+.aboutContent h2 {
+  color: rgb(78, 135, 241);
+  font-weight: 700;
+}
+.aboutContent h5 {
+  color: rgb(187, 163, 118);
+}
+.about1 {
+  margin-top: 50px;
+  background-color: rgb(76, 141, 167);
+  padding: 10px 20px;
+  height: 330px;
+  color: snow;
+  border-radius: 0px 35px 35px 35px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.219), -4px -4px 4px rgba(0, 0, 0, 0.219);
+  cursor: pointer;
+}
+.about1:hover {
+  box-shadow: 2px 2px 4px gray, -2px -2px 4px gray;
+}
+.about_img {
+  font-size: 55px;
+  text-align: center;
+  margin: 10px 0;
+}
+.quiestions {
+  margin-top: 60px;
+}
+
+.contat_btn {
+  font-family: inherit;
+  font-size: 15px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.contat_btn span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.contat_btn svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contat_btn:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.contat_btn:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.contat_btn:hover span {
+  transform: translateX(5em);
+}
+
+.contat_btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+.extra_contact {
+  margin-top: 40px;
+}
+.confirm {
+  text-align: center;
+}
+.confirm img {
+  height: 100px;
+}
+
+.row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+
+
+@media (min-width: 320px) and (max-width: 650px) {
+  nav {
+    padding: 0px 15px;
+    justify-content: space-around;
+  }
+  nav img {
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .toggle {
+    display: block;
+  }
+  .Nav_ul {
+    display: none;
+    margin: 20px;
+  }
+  .new_nav_ul {
+    display: block;
+  }
+  /* booking handler */
+  .Booking_Handler {
+    width: 100%;
+  }
+  .inputs {
+    width: 50%;
+    display: block;
+  }
+  .inputs button {
+    margin-left: 11px;
+  }
+  /* flight data */
+  .flights {
+    display: block;
+    margin-bottom: 20px;
+    padding: 15px 25px;
+  }
+  /* flights info */
+  .normalInfo {
+    display: block;
+  }
+  .AdvanceInfo {
+    display: block;
+  }
+
+  /* ticket form */
+  .booking-form {
+    padding: 40px 10px;
+  }
+  .book-tickets {
+    width: 100%;
+    padding: 10px;
+  }
+  /*user profile  */
+  .user {
+    width: 90%;
+    padding: 10px 4px;
+  }
+  .personal_info h4 {
+    margin: 10px 7px;
+  }
+  /*about  */
+  .aboutContent h5 {
+    font-size: 16px;
+    lighting-color: lightblue;
+    text-align: justify;
+  }
+  .about1 {
+    margin-inline: 25px;
+  }
+  .accordion-body {
+    text-align: justify;
+  }
+  /* popular airlines */
+  .RJVR {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .american_icon {
+    margin-left: 25px;
+  }
+}
