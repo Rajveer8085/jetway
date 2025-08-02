@@ -587,4 +587,18 @@ N4tIX1dSfL27utdg*/
   .american_icon {
     margin-left: 25px;
   }
+
+  /* login form */
+  .LoginForm form{
+    width: 100%;
+  }
+}
+
+/* pagination css */
+.pagination-container button {
+  min-width: 40px;
+  transition: all 0.2s ease-in-out;
+}
+.pagination-container button:hover {
+  transform: scale(1.05);
 }

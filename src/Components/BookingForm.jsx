@@ -66,12 +66,12 @@ const BookingForm = () => {
     </div>
         <h6 className='text-danger'>{phoneError}</h6>
     <div className="mb-3 d-flex justify-content-evenly">
-        <input type="text" name='departurecity' ref={originEle} className='form-control me-1' readOnly value={moreInfo.itineraries[0].segments[0].departure.iataCode} placeholder='Enter Departure City..' />
-        <input type="text" name='destinationcity' ref={destinationEle} className='form-control ms-1' readOnly value={moreInfo.itineraries[0].segments[0].arrival.iataCode} placeholder='Enter Your Destination City..' />
+        <input type="text" name='departurecity' ref={originEle} className='form-control me-1' readOnly value={moreInfo.departure.iata} placeholder='Enter Departure City..' />
+        <input type="text" name='destinationcity' ref={destinationEle} className='form-control ms-1' readOnly value={moreInfo.arrival.iata} placeholder='Enter Your Destination City..' />
     </div>
 
     <div className="mb-3">
-        <input type="text" name='Departure_Date' ref={dateEle} readOnly value={new Date(moreInfo.itineraries[0].segments[0].departure.at).toLocaleDateString()} className='form-control'  />
+        <input type="text" name='Departure_Date' ref={dateEle} readOnly value={new Date(moreInfo.departure.scheduled).toLocaleDateString()} className='form-control'  />
     </div>
     <div className="mb-3">
         <h5>Numbers Of Passengers</h5>

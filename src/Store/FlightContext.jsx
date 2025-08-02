@@ -1,24 +1,24 @@
-import { createContext, useState,useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import React from "react";
 
 export const Flightcontext = createContext({
-    TakingData:()=>{},
-    FlightNewData:[],
-    FlightMoreInfo:() =>{},
-    moreInfo:[],
-    userBtn:[],
-    loginUser:()=>{},
-    logoutUser:()=>{},
-    userId:""
+  TakingData: () => { },
+  FlightNewData: [],
+  FlightMoreInfo: () => { },
+  moreInfo: [],
+  userBtn: [],
+  loginUser: () => { },
+  logoutUser: () => { },
+  userId: ""
 })
 
 
-const FlightContextProvider = ({children}) => {
+const FlightContextProvider = ({ children }) => {
   // login changer
-  const [userBtn,setuserbtn] = useState()
+  const [userBtn, setuserbtn] = useState()
 
   // for fetching book tickets  
-  const [userId ,setUserId] = useState()
+  const [userId, setUserId] = useState()
 
 
   // Check if user is already logged in on page load
@@ -48,18 +48,19 @@ const FlightContextProvider = ({children}) => {
     localStorage.removeItem("userLoggedIn");
   };
   console.log(userBtn);
-    // let FlightNewData = []
-    const [FlightNewData,setFlightNewData] = useState([])
-    const TakingData = (flight) =>{
-        setFlightNewData(flight)
-    }
-    const [moreInfo,setMoreinfo] = useState()
-    const FlightMoreInfo = (infos)  =>{
-        setMoreinfo(infos)
-    }
+  // let FlightNewData = []
+  const [FlightNewData, setFlightNewData] = useState([])
+
+  const TakingData = (flight) => {
+    setFlightNewData(flight)
+  }
+  const [moreInfo, setMoreinfo] = useState()
+  const FlightMoreInfo = (infos) => {
+    setMoreinfo(infos)
+  }
   return (
-    <Flightcontext.Provider value={{TakingData,FlightNewData,FlightMoreInfo,moreInfo,userBtn,loginUser,logoutUser,userId}}>
-    {children}
+    <Flightcontext.Provider value={{ TakingData, FlightNewData, FlightMoreInfo, moreInfo, userBtn, loginUser, logoutUser, userId }}>
+      {children}
     </Flightcontext.Provider>
   )
 }

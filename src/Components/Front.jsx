@@ -1,97 +1,90 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import first from "../assets/imgs/swipe5.jpeg"
-import second from "../assets/imgs/swipe4.jpg"
-import third from "../assets/imgs/swipe1.avif"
-import fourth from "../assets/imgs/slide_3.jpg"
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
 
 import './styles.css';
 
 // import required modules
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+// import slides video
+import First_slide from "../assets/imgs/First-slide-vid.mp4"
+import Second_slide from "../assets/imgs/second-slide-vid.mp4"
+import Third_slide from "../assets/imgs/third-slide-vid.mp4"
 
 export default function Front() {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
 
+  };
+  const Slides = [
+    {
+      image:First_slide,
+      heading:"🌍 Discover Your Next Destination",
+      Text:"Search, compare, and book flights across 300+ cities — all in real time.",
+      btns:"✈️ Search Flights"
+    },
+    {
+      image:Second_slide,
+      heading:"📡 Real-Time Flight Tracker",
+      Text:"Track departures, arrivals, and delays with live updates powered by AviationStack.",
+      btns:"🔍 Track Now "
+    },
+    {
+      image:Third_slide,
+      heading:"🌐 Global Coverage. Local Convenience.",
+      Text:"From Delhi to Dubai, we’ve got you covered. Fly smarter with our global network.",
+      btns:"🚀 Explore Routes"
+    },
+  ]
   return (
     <>
       <Swiper
-        style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff',
+        spaceBetween={0}
+        centeredSlides={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
         }}
-        spaceBetween={10}
+        speed={3000}
+        pagination={{
+          clickable: true,
+        }}
         navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2"
-      >
-        <SwiperSlide className='swipe_slide1'>
-          <div className="slide-content">
-            <img src={first} />
-            <div className="overlay-content">
-              <p>Book Your Dream Flight Now</p>
-              <button className="book-btn">Book Now</button>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className='swipe_slide1'>
-          <div className="slide-content">
-            <img src={second} />
-            <div className="overlay-content">
-              <p>Book Your Dream Flight Now</p>
-              <button className="book-btn">Book Now</button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className='swipe_slide1'>
-          <div className="slide-content">
-            <img src={third} />
-            <div className="overlay-content">
-              <p>Book Your Dream Flight Now</p>
-              <button className="book-btn">Book Now</button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className='swipe_slide1'>
-          <div className="slide-content">
-            <img src={fourth} />
-            <div className="overlay-content">
-              <p>Book Your Dream Flight Now</p>
-              <button className="book-btn">Book Now</button>
-            </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
+        modules={[Autoplay, Pagination, Navigation]}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
-        <SwiperSlide className='swipe_slide2'>
-          <img src={first} />
+        {Slides.map((e)=>(
+            <SwiperSlide>
+          <div className="hero-slide">
+            <video loop autoPlay muted>
+              <source src={e.image} type='video/mp4' />
+            </video>
+            <div className="content">
+              <h1>{e.heading}</h1>
+              <p>{e.Text}</p>
+              <button onClick={() => window.scrollTo({ top: 600, behavior: 'smooth' })}>
+                {e.btns}
+              </button>
+            </div>
+          </div>
         </SwiperSlide>
-        <SwiperSlide className='swipe_slide2'>
-          <img src={second} />
-        </SwiperSlide>
-        <SwiperSlide className='swipe_slide2'>
-          <img src={third} />
-        </SwiperSlide>
-        <SwiperSlide className='swipe_slide2'>
-          <img src={fourth} />
-        </SwiperSlide>
+        ))}
+        <div className="autoplay-progress" slot="container-end">
+          <svg viewBox="0 0 48 48" ref={progressCircle}>
+            <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span ref={progressContent}></span>
+        </div>
       </Swiper>
     </>
   );
