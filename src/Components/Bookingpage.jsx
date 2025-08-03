@@ -45,7 +45,7 @@ const FlightSearch = () => {
       }
       if (to == null) return;
 
-      const FlightData = await axios.post("http://localhost:3003/fetch-flights", { from, to })
+      const FlightData = await axios.post("https://jetway-server.onrender.com/fetch-flights", { from, to })
       console.log(FlightData.data.data)
       TakingData(FlightData.data.data)
     } catch (error) {
