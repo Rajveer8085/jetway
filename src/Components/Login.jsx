@@ -27,7 +27,7 @@ const Login = () => {
         setpassError("")
         try {
       
-          const response = await axios.post("https://jetway-server.onrender.com/verify",{email,password})
+          const response = await axios.post("https://jetway-server.vercel.app/verify",{email,password})
           // when data matched
           console.log(response,"this is a response");
           if(response.data.message === "success"){
