@@ -44,7 +44,7 @@ const BookingForm = () => {
                 navigate("/confirmed")
                 // console.log(name,email,date,origin,destination,seats,request);
                 try {
-                    await axios.post("",{name,email,date,origin,destination,seats,request})
+                    await axios.post("https://jetway-server.vercel.app/Bookingform",{name,email,date,origin,destination,seats,request})
                 } catch (error) {
                     console.log(error);
                 }
